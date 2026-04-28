@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F8FAFC;
+    @apply text-gray-900 antialiased min-h-screen;
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer components {
+  /* Unified Card Style */
+  .card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  /* Page Header Style */
+  .page-header {
+    margin-bottom: 32px;
+  }
+
+  .page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+    color: #64748B;
+    margin-top: 4px;
+  }
+
+  /* Section Spacing */
+  .section {
+    margin-bottom: 32px;
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    background-color: #2563EB;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #1D4ED8;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    background-color: #FFFFFF;
+    color: #0F172A;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: 1px solid #E2E8F0;
+    transition: all 0.25s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #F8FAFC;
+    border-color: #CBD5E1;
+  }
+
+  /* Stat Card Style */
+  .stat-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 500;
+  }
+
+  .stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 8px 0;
+  }
+
+  .stat-explanation {
+    font-size: 13px;
+    color: #64748B;
+  }
+
+  /* Progress Bar */
+  .progress-bar {
+    height: 6px;
+    background-color: #E2E8F0;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+
+  /* Kanban Column */
+  .kanban-column {
+    background-color: #F1F5F9;
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  /* AI Card Style */
+  .ai-card {
+    background: linear-gradient(135deg, #EFF6FF 0%, #EEF2FF 100%);
+    border: 1px solid #BFDBFE;
+    border-left: 4px solid #2563EB;
+    border-radius: 16px;
+    padding: 20px;
+  }
+}
