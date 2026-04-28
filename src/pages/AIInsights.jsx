@@ -1,13 +1,14 @@
-import { motion } from 'framer-motion'
-import { Sparkles, TrendingUp, Lightbulb, Target, AlertCircle } from 'lucide-react'
-import Navbar from '../components/Navbar'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Sparkles, TrendingUp, Target, AlertTriangle, CheckCircle, ArrowRight, X, Loader2, Brain, Lightbulb, Zap, BarChart3, Users, DollarSign } from 'lucide-react'
+import useStore from '../store/useStore'
 
 export default function AIInsights() {
   const insights = [
     { id: 1, type: 'opportunity', title: 'High-value lead detected', description: 'Alice Brown from Startup Inc shows 85% conversion probability', icon: Target, color: 'text-green-500' },
     { id: 2, type: 'trend', title: 'Conversion rate improving', description: 'Your lead-to-deal conversion increased by 12% this month', icon: TrendingUp, color: 'text-blue-500' },
     { id: 3, type: 'suggestion', title: 'Optimize follow-up timing', description: 'Best response time for your industry is 2 hours. Current avg: 4.5 hours', icon: Lightbulb, color: 'text-yellow-500' },
-    { id: 4, type: 'alert', title: 'Risk detected', description: '3 deals in Negotiation stage haven been updated in 7 days', icon: AlertCircle, color: 'text-red-500' },
+    { id: 4, type: 'alert', title: 'Risk detected', description: '3 deals in Negotiation stage haven been updated in 7 days', icon: AlertTriangle, color: 'text-red-500' },
   ]
 
   // Summary stats
@@ -20,8 +21,6 @@ export default function AIInsights() {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
-      <Navbar />
-
       <main className="p-6 max-w-[1600px] mx-auto">
         {/* Page Header */}
         <div className="page-header">

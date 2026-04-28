@@ -29,7 +29,7 @@ const TodaySchedule = ({ schedule }) => {
       {/* Date Scroller */}
       <div className="px-5 py-4 border-b border-gray-100">
         <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-          {schedule.dates.map((date, index) => (
+          {schedule?.dates?.map((date, index) => (
             <motion.button
               key={`${date.day}-${date.date}`}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -50,7 +50,7 @@ const TodaySchedule = ({ schedule }) => {
 
       {/* Schedule List */}
       <div className="p-5 space-y-3">
-        {schedule.events.map((event, index) => (
+        {schedule?.events?.map((event, index) => (
           <motion.div
             key={event.id}
             initial={{ opacity: 0, y: 10 }}
@@ -96,7 +96,7 @@ const TodaySchedule = ({ schedule }) => {
           <div className="flex-1">
             <h4 className="text-white font-semibold mb-2">Action Needed</h4>
             <div className="flex flex-wrap gap-2">
-              {schedule.actionNeeded.tags.map((tag, index) => (
+              {schedule.actionNeeded?.tags?.map((tag, index) => (
                 <span
                   key={index}
                   className="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full text-xs font-medium"
@@ -106,7 +106,7 @@ const TodaySchedule = ({ schedule }) => {
               ))}
             </div>
             <p className="text-gray-400 text-sm mt-2">
-              {schedule.actionNeeded.count} items require attention
+              {schedule.actionNeeded?.count ?? 0} items require attention
             </p>
           </div>
         </div>

@@ -4,16 +4,16 @@ import { LineChart, Line, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Cart
 import { TrendingUp, Activity } from 'lucide-react';
 
 const HeroFunnel = ({ pipelineHealth }) => {
-  const chartData = pipelineHealth.sparkline.map((v, i) => ({
+  const chartData = pipelineHealth?.sparkline?.map((v, i) => ({
     day: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][i],
     value: v
-  }));
+  })) || [];
 
-  const stageData = pipelineHealth.stages.map(stage => ({
+  const stageData = pipelineHealth?.stages?.map(stage => ({
     name: stage.name,
     value: stage.value,
     color: stage.color
-  }));
+  })) || [];
 
   return (
     <motion.div
